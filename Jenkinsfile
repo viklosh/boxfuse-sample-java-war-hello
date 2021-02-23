@@ -2,7 +2,6 @@ pipeline {
     agent none
 
     stages {
-        #-----------------------------------------
         stage('buid_docker_builder_image') {
             agent {
                 docker {
