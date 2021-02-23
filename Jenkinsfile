@@ -11,10 +11,10 @@ pipeline {
             }
             
             steps {
-                sh 'whoami'
-                sh 'groups'
-                sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
+                sh 'mvn package'
+                //sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
                 sh 'ls -la'
+                sh 'ls target -la'
             }
         }
     }
