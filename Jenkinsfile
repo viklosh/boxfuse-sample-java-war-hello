@@ -11,6 +11,8 @@ pipeline {
             }
             
             steps {
+                sh 'whoami'
+                sh 'groups'
                 sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
                 sh 'ls -la'
             }
