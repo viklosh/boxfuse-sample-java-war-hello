@@ -12,9 +12,7 @@ pipeline {
             
             steps {
                 sh 'mvn package'
-                //sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
-                sh 'ls -la'
-                sh 'ls target -la'
+                sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
             }
         }
     }
