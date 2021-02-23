@@ -2,24 +2,18 @@ pipeline {
     agent none
 
     stages {
+        #-----------------------------------------
         stage('buid_docker_builder_image') {
             agent {
-                dockerfile {
-                    filename 'Dockerfile'
-                    args '-v /tmp:/tmp'
+                docker {
+                    image 'viklosh/docker_boxfuse_builder'
+                    args  '-v artifact:/artifact'
+                    args  '-v /var/run/docker.sock:/var/run/docker.sock'
                 }
             }
             
             steps {
                 echo 'Build Docker builder Image'
-            }
-        }
-        stage('buid') {
-            agent {
-                docker { image 'maven:3-alpine' }
-            }
-            steps {
-                sh 'mvn --version'
             }
         }
     }
