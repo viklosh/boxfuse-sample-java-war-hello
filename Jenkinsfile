@@ -6,7 +6,6 @@ pipeline {
             agent {
                 docker {
                     image 'viklosh/docker_boxfuse_builder'
-                    args  '-v artifact:/artifact'
                     args  '-v /var/run/docker.sock:/var/run/docker.sock'
                 }
             }
