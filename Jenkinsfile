@@ -11,7 +11,7 @@ pipeline {
             }
             
             steps {
-                echo 'Build Docker builder Image'
+                ls -la
             }
         }
     }
