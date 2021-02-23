@@ -23,7 +23,7 @@ pipeline {
             agent any
             steps {
                 sshagent(['778a783f-aff1-46d0-aefe-5ca36c5971eb']) {
-                   sh 'ssh -o StrictHostKeyChecking=no viklosh@10.130.0.25 docker run --rm --name boxfuse -d viklosh/boxfuse'
+                   sh 'ssh -o StrictHostKeyChecking=no viklosh@10.130.0.25 docker run --rm --name boxfuse -d -p 8080:8080 viklosh/boxfuse'
                 }
             }
         }
