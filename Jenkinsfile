@@ -11,7 +11,7 @@ pipeline {
             }
             
             steps {
-                ls -la
+                sh 'ls -la'
             }
         }
     }
