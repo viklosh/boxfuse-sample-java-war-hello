@@ -11,7 +11,7 @@ pipeline {
             }
             
             steps {
-                sh 'docker build -f Dockerfile.boxfuse -t viklosh/boxfuse'
+                sh 'docker build . -f Dockerfile.boxfuse -t viklosh/boxfuse'
                 sh 'ls -la'
             }
         }
